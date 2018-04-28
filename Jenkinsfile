@@ -6,7 +6,7 @@ pipeline {
                    ansibleTower (
                        towerServer: ‘Tower-Prod’,
                        templateType: ‘job’,
-                       jobTemplate: ‘mytemplate’,
+                       jobTemplate: ‘myte1’,
                        importTowerLogs: ‘true’,
                        inventory: ‘myprod’
                    )
