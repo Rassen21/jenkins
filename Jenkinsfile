@@ -1,17 +1,18 @@
-pipeline {
-    agent {
-        node {
-           stages {
-               stage(‘Deploy’) {
-                   ansibleTower (
-                       towerServer: ‘Tower-Prod’,
-                       templateType: ‘job’,
-                       jobTemplate: ‘myte1’,
-                       importTowerLogs: ‘true’,
-                       inventory: ‘myprod’
-                   )
-             }
-         }
-      }
-   }  
+node {
+    stage('MyStage') {
+        ansibleTower(
+            towerServer: 'Tower-Prod',
+            templateType: 'job',
+            jobTemplate: 'Simple Test',
+            importTowerLogs: true,
+            inventory: 'myprod',
+            jobTags: '',
+            limit: '',
+            removeColor: false,
+            verbose: true,
+            credential: '',
+            extraVars: '''---
+my_var:  "Jenkins Test"'''
+        )
+    }
 }
