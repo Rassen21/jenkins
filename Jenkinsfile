@@ -1,6 +1,6 @@
 pipeline {
-   agent {
-       node {
+    node {
+       stages {
            stage(‘Deploy’) {
                ansibleTower (
                    towerServer: ‘Tower-Prod’,
